@@ -1,8 +1,7 @@
 {
-    "id": "nodebb-theme-lavender",
-    "name": "Lavender",
-    "description": "A theme that utilizes a masonry (magazine-like) homepage.",
-    "url": "https://github.com/NodeBB/nodebb-theme-lavender",
-    "screenshot": "screenshot.png",
-    "baseTheme": "nodebb-theme-vanilla"
+    "id": "nodebb-theme-cd-lavender",
+    "name": "CoderDojo Theme for NodeBB",
+    "description": "CoderDojo fork of the Lavender theme for NodeBB.",
+    "url": "https://www.github.com/ckiss/nodebb-theme-cd-lavender",
+    "screenshot": "screenshot.png"
 }
