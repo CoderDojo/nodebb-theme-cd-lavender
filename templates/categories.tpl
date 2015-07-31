@@ -41,34 +41,6 @@
 							</a>
 							<div class="description" itemprop="description">{categories.descriptionParsed}</div>
 						</div>
-
-						<!-- IF !categories.link -->
-						<!-- BEGIN posts -->
-						<div component="category/posts" class="post-preview clearfix">
-							<strong><a href="{config.relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></strong>
-							<hr/>
-							<a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->{config.relative_path}/user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug -->">
-								<!-- IF categories.posts.user.picture -->
-								<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
-								<!-- ELSE -->
-								<div class="pull-left user-img user-icon" title="{categories.posts.user.username}" style="background-color: {categories.posts.user.icon:bgColor}">{categories.posts.user.icon:text}</div>
-								<!-- ENDIF categories.posts.user.picture -->
-							</a>
-							<div class="post-preview-content">
-
-								<div class="content">
-								{categories.posts.content}
-								</div>
-								<p class="fade-out"></p>
-							</div>
-
-							<span class="pull-right post-preview-footer">
-								<span class="timeago" title="{categories.posts.timestamp}"></span> &bull;
-								<a href="{config.relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">[[global:read_more]]</a>
-							</span>
-						</div>
-						<!-- END posts -->
-						<!-- ENDIF !categories.link -->
 					</div>
 				</div>
 			</div>
