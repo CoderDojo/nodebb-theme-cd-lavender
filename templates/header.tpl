@@ -40,8 +40,9 @@
 <body class="{bodyClass}">
 	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
 		<!-- IMPORT partials/cd-header.tpl -->
+		<!-- IMPORT partials/content-header.tpl -->
 		<div class="loading-bar"></div>
-		<div class="container">
+		<div class="container">	
 			<!-- IMPORT partials/menu.tpl -->
 		</div>
 	</div>
