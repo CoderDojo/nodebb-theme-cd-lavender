@@ -18,13 +18,13 @@
 			<!-- IF privileges.topics:create -->
 			<button id="new_topic" class="btn btn-primary">[[category:new_topic_button]]</button>
 			<!-- ELSE -->
-				<!-- IF !loggedIn -->
+				<!-- IF !config.loggedIn -->
 				<a href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-				<!-- ENDIF !loggedIn -->
+				<!-- ENDIF !config.loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
-				<!-- IF loggedIn -->
+				<!-- IF config.loggedIn -->
 				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->">
 					<i class="fa fa-eye"></i>
 					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:watch]]</span>
@@ -33,7 +33,7 @@
 					<i class="fa fa-eye-slash"></i>
 					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:ignore]]</span>
 				</button>
-				<!-- ENDIF loggedIn -->
+				<!-- ENDIF config.loggedIn -->
 
 				<!-- IMPORT partials/category_tools.tpl -->
 

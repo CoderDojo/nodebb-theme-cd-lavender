@@ -1,7 +1,7 @@
 <button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target="#cd-content-header-collapse">
   <i class="fa zen-icon"></i>
 </button>
-<!-- IF loggedIn -->
+<!-- IF config.loggedIn -->
 <div class="navbar-collapse collapse navbar-ex1-collapse" id="cd-content-header-collapse">
     <ul class="container">
       <div class="cd-header-menu">
@@ -23,4 +23,4 @@
       </div>
     </ul>
 </div>
-<!-- ENDIF loggedIn -->
+<!-- ENDIF config.loggedIn -->

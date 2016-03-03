@@ -32,7 +32,7 @@
 	</ul>
 </div>
 
-<div class="account">
+<div class="account" data-uid="{uid}">
 
 	<div class="row">
 		<div class="col-md-5 account-block">
@@ -57,7 +57,7 @@
 							<!-- ENDIF !config.disableChat -->
  							<a id="follow-btn" href="#" class="btn btn-success btn-sm <!-- IF isFollowing -->hide<!-- ENDIF isFollowing -->">[[user:follow]]</a>
  							<a id="unfollow-btn" href="#" class="btn btn-warning btn-sm <!-- IF !isFollowing -->hide<!-- ENDIF !isFollowing -->">[[user:unfollow]]</a>
-							
+
 							<!-- IF isAdmin -->
 							<br/><br/>
 							<a id="banAccountBtn" href="#" class="btn btn-danger btn-sm <!-- IF banned -->hide<!-- ENDIF banned -->">[[user:ban_account]]</a>
@@ -65,7 +65,7 @@
 							<a id="deleteAccountBtn" href="#" class="btn btn-danger btn-sm">[[user:delete_account]]</a><br/><br/>
 							<!-- ENDIF isAdmin -->
 							<!-- ENDIF !isSelf -->
-							
+
 						</div>
 
 						<div id="banLabel" class="text-center <!-- IF !banned -->hide<!-- ENDIF !banned -->">

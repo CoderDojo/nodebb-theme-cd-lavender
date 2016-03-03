@@ -97,11 +97,11 @@
 									<span class="post-tools">
 										<!-- IF !posts.selfPost -->
 										<!-- IF posts.user.userslug -->
-										<!-- IF loggedIn -->
+										<!-- IF config.loggedIn -->
 										<!-- IF !config.disableChat -->
 										<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
 										<!-- ENDIF !config.disableChat -->
-										<!-- ENDIF loggedIn -->
+										<!-- ENDIF config.loggedIn -->
 										<!-- ENDIF posts.user.userslug -->
 										<!-- ENDIF !posts.selfPost -->
 
