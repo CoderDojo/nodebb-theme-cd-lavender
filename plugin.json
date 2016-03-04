@@ -1,5 +1,5 @@
 {
-	"id": "nodebb-theme-lavender",
+	"id": "nodebb-theme-cd-lavender",
 	"library": "./lib/theme.js",
 	"hooks": [
 		{
@@ -9,14 +9,19 @@
 			"hook": "static:app.load", "method": "init"
 		},
 		{
+			"hook": "static:app.preload", "method": "preinit"
+		},
+		{
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
 		},
 		{
 			"hook": "filter:config.get", "method": "getConfig"
 		}
 	],
+    "languages": "languages",
 	"staticDirs": {
-		"vendor": "static/vendor"
+		"vendor": "static/vendor",
+	  	"images": "static/images"
 	},
 	"scripts": [
 		"static/lib/lavender.js",

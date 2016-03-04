@@ -5,9 +5,9 @@
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{css-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{config.cache-buster}" />
 	<!-- BEGIN linkTags -->
-	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.type --> type="{linkTags.type}"<!-- ENDIF linkTags.type --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
+	{function.buildLinkTag}
 	<!-- END linkTags -->
 
 	<!--[if lt IE 9]>
@@ -25,7 +25,7 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
-	<script src="{relative_path}/nodebb.min.js?{script-buster}"></script>
+	<script src="{relative_path}/nodebb.min.js?{config.cache-buster}"></script>
 	<!-- IMPORT partials/requirejs-config.tpl -->
 
 	<!-- IF useCustomJS -->
@@ -37,10 +37,12 @@
 
 </head>
 
-<body>
+<body class="{bodyClass}">
 	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<!-- IMPORT partials/cd-header.tpl -->
+		<!-- IMPORT partials/content-header.tpl -->
 		<div class="loading-bar"></div>
-		<div class="container">
+		<div class="container">	
 			<!-- IMPORT partials/menu.tpl -->
 		</div>
 	</div>

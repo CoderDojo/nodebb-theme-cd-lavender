@@ -18,13 +18,13 @@
 			<!-- IF privileges.topics:create -->
 			<button id="new_topic" class="btn btn-primary">[[category:new_topic_button]]</button>
 			<!-- ELSE -->
-				<!-- IF !loggedIn -->
+				<!-- IF !config.loggedIn -->
 				<a href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-				<!-- ENDIF !loggedIn -->
+				<!-- ENDIF !config.loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
-				<!-- IF loggedIn -->
+				<!-- IF config.loggedIn -->
 				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->">
 					<i class="fa fa-eye"></i>
 					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:watch]]</span>
@@ -33,7 +33,7 @@
 					<i class="fa fa-eye-slash"></i>
 					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:ignore]]</span>
 				</button>
-				<!-- ENDIF loggedIn -->
+				<!-- ENDIF config.loggedIn -->
 
 				<!-- IMPORT partials/category_tools.tpl -->
 
@@ -71,22 +71,22 @@
 
 							<div class="category-profile-pic">
 								<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
-									<!-- IF topics.thumb -->
-									<img src="{topics.thumb}" alt="{topics.title}" class="profile-image user-img" title="{topics.title}">
+									<!-- IF topics.user.picture -->
+									<img class="img-rounded user-img" src="{topics.user.picture}" title="{topics.user.username}" />
 									<!-- ELSE -->
-									<img src="{topics.user.picture}" alt="{topics.user.username}" class="profile-image user-img" title="{topics.user.username}">
-									<!-- ENDIF topics.thumb -->
+									<div class="user-icon" style="background-color: {topics.user.icon:bgColor};" title="{topics.user.username}">{topics.user.icon:text}</div>
+									<!-- ENDIF topics.user.picture -->
 								</a>
 							</div>
 							<div class="category-text">
 								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
-									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<span class="timeago" title="{topics.relativeTime}"></span>
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
-									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
+									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestamp}"></span></a>
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
@@ -107,9 +107,15 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
+							<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
+								<!-- IF topics.teaser.user.picture -->
+								<img class="teaser-pic" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/>
+								<!-- ELSE -->
+								<div class="teaser-pic user-icon" style="background-color: {topics.teaser.user.icon:bgColor};" title="{topics.teaser.user.username}">{topics.teaser.user.icon:text}</div>
+								<!-- ENDIF topics.teaser.user.picture -->
+							</a>
 							<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
+								<span class="timeago" title="{topics.teaser.timestamp}"></span>
 							</a>
 							<!-- ENDIF topics.unreplied -->
 						</div>
@@ -128,4 +134,9 @@
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
-<!-- IMPORT partials/noscript/paginator.tpl -->
+
+<!-- IF !config.usePagination -->
+<noscript>
+	<!-- IMPORT partials/paginator.tpl -->
+</noscript>
+<!-- ENDIF !config.usePagination -->
