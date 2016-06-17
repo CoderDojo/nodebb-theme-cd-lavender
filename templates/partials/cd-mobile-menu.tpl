@@ -4,5 +4,6 @@
         <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="https://zen.coderdojo.com">Find a Dojo</a></li>
         <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://kata.coderdojo.com/wiki/Main_Page">Resources</a></li>
         <li id="menu-item-2917" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2917"><a href="http://help.coderdojo.com/">HELP</a></li>
-        <li id="menu-item-2285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2285"><a href="http://coolestprojects.org/">CoolestProjects2015</a></li>
-    </ul>								</nav>
+        <li id="menu-item-2285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2285"><a href="http://coolestprojects.org/">CoolestProjects2016</a></li>
+    </ul>
+  </nav>

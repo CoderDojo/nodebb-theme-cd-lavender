@@ -151,7 +151,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
-							<div class="hide" id="search-fields">
+							<div class="hide hidden" id="search-fields">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 								</div>
