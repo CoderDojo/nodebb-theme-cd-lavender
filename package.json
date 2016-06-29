@@ -1,27 +1,49 @@
 {
-  "name": "nodebb-theme-cd-lavender",
-  "version": "1.0.45",
-  "description": "Fork of Lavender Theme for NodeBB",
+  "name": "nodebb-theme-cd-persona",
+  "version": "3.0.13",
+  "nbbpm": {
+    "compatibility": "^0.8.2"
+  },
+  "description": "Fork of Persona theme for NodeBB for CoderDojo",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nathanpower-nearform/nodebb-theme-cd-lavender"
+    "url": "https://github.com/psychobunny/nodebb-theme-persona"
   },
   "keywords": [
     "nodebb",
-    "lavender",
     "theme",
-    "themes"
+    "forum",
+    "bootstrap",
+    "responsive",
+    "coderDojo"
   ],
-  "author": {
-    "name": "nearform",
-    "email": "info@nearform.com"
-  },
+  "contributors": [
+    {
+      "name": "Andrew Rodrigues",
+      "email": "andrew@designcreateplay.com",
+      "url": "https://github.com/psychobunny"
+    },
+    {
+      "name": "Julian Lam",
+      "email": "julian@designcreateplay.com",
+      "url": "https://github.com/julianlam"
+    },
+    {
+      "name": "Barış Soner Uşaklı",
+      "email": "baris@designcreateplay.com",
+      "url": "https://github.com/barisusakli"
+    }
+  ],
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
+    "url": "https://github.com/psychobunny/nodebb-theme-persona/issues"
   },
-  "peerDependencies": {
-    "nodebb-theme-vanilla": "^1.0.0"
-  }
+  "readme": "Persona theme for NodeBB\r\n====================\r\n\r\nPersona is the new default theme for NodeBB as of v0.7.1\r\n\r\n## Addons\r\n\r\n[Recent Cards](https://github.com/psychobunny/nodebb-plugin-recent-cards)\r\n\r\n## Screenshots\r\n\r\n![](https://d2gn4xht817m0g.cloudfront.net/p/product_screenshots/images/original/000/570/286/570286-db378dfd28256a8fabacc9129b3638dc678ac393.png?1439315393)\r\n\r\n<br />\r\n![](https://d2gn4xht817m0g.cloudfront.net/p/product_screenshots/images/original/000/570/287/570287-5875c63ce086d361b76d94e5bc7cc88a5fd34b8b.png?1439315419)\r\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/psychobunny/nodebb-theme-persona",
+  "_id": "nodebb-theme-persona@3.0.13",
+  "_shasum": "d73183cd0467ca61f7be9b6c15a811ed742f2c95",
+  "_from": "nodebb-theme-persona@3.0.13",
+  "_resolved": "https://registry.npmjs.org/nodebb-theme-persona/-/nodebb-theme-persona-3.0.13.tgz"
 }

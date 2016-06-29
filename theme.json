@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-cd-lavender",
-    "name": "CoderDojo Lavender Theme for NodeBB",
-    "description": "CoderDojo fork of the Lavender theme for NodeBB.",
-    "url": "https://www.github.com/nathanpower-nearform/nodebb-theme-cd-lavender",
+    "id": "nodebb-theme-cd-persona",
+    "name": "CD-Persona",
+    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
+    "url": "https://github.com/psychobunny/nodebb-theme-persona",
     "screenshot": "screenshot.png"
 }

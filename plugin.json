@@ -1,28 +1,15 @@
 {
-	"id": "nodebb-theme-cd-lavender",
-	"library": "./lib/theme.js",
-	"hooks": [
-		{
-			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
-		},
-		{
-			"hook": "static:app.load", "method": "init"
-		},
-		{
-			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
-		},
-		{
-			"hook": "filter:config.get", "method": "getConfig"
-		}
-	],
-    "languages": "languages",
+	"id": "nodebb-theme-cd-persona",
+	"hooks": [],
+	"languages": "languages",
 	"staticDirs": {
 		"vendor": "static/vendor",
-	  	"images": "static/images"
+			"images": "static/images"
 	},
 	"scripts": [
-		"static/lib/lavender.js",
-		"static/vendor/masonry.js",
-		"static/vendor/imagesLoaded.js"
+		"lib/persona.js",
+		"lib/modules/nprogress.js",
+		"lib/modules/autohidingnavbar.min.js",
+		"lib/modules/slideout.min.js"
 	]
 }

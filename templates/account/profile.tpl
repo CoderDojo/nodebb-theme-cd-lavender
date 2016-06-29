@@ -1,36 +1,4 @@
-
-<div class="account-username-box" data-userslug="{userslug}" data-uid="{uid}">
-	<ul class="nav nav-pills account-sub-links">
-		<li>
-			<a href="#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
-				[[user:more]]
-				<span class="caret"></span>
-				<span class="sr-only">Toggle Dropdown</span>
-			</a>
-			<ul class="dropdown-menu pull-right" role="menu">
-				<li><a href="{config.relative_path}/user/{userslug}/following"><i class="fa fa-fw fa-users"></i> [[user:following]]</a></li>
-				<li><a href="{config.relative_path}/user/{userslug}/followers"><i class="fa fa-fw fa-users"></i> [[user:followers]]</a></li>
-				<li class="divider"></li>
-				<li><a href="{config.relative_path}/user/{userslug}/topics"><i class="fa fa-fw fa-book"></i> [[global:topics]]</a></li>
-				<li><a href="{config.relative_path}/user/{userslug}/posts"><i class="fa fa-fw fa-pencil"></i> [[global:posts]]</a></li>
-				<li><a href="{config.relative_path}/user/{userslug}/groups"><i class="fa fa-fw fa-users"></i> [[global:header.groups]]</a></li>
-				<!-- IF showHidden -->
-				<li><a href="{config.relative_path}/user/{userslug}/favourites"><i class="fa fa-fw fa-heart"></i> [[user:favourites]]</a></li>
-				<li><a href="{config.relative_path}/user/{userslug}/watched"><i class="fa fa-fw fa-eye"></i> [[user:watched]]</a></li>
-				<!-- ENDIF showHidden -->
-				<!-- BEGIN profile_links -->
-				<li id="{profile_links.id}" class="plugin-link <!-- IF profile_links.public -->public<!-- ELSE -->private<!-- ENDIF profile_links.public -->"><a href="{config.relative_path}/user/{userslug}/{profile_links.route}"><i class="fa fa-fw {profile_links.icon}"></i> {profile_links.name}</a></li>
-				<!-- END profile_links -->
-			</ul>
-		</li>
-		<li>
-			<a href="{config.relative_path}/user/{userslug}" class="inline-block" id="profile"><i class="fa fa-user"></i> [[user:profile]]</a>
-		</li>
-		<!-- IF showHidden -->
-		<li><a href="{config.relative_path}/user/{userslug}/settings"><i class="fa fa-gear"></i> [[user:settings]]</a></li>
-		<!-- ENDIF showHidden -->
-	</ul>
-</div>
+<!-- IMPORT partials/account_menu.tpl -->
 
 <div class="account">
 
@@ -40,7 +8,7 @@
 			<div class="account-picture-block panel panel-default">
 				<div class="panel-body">
 					<div class="text-center">
-						<img src="{picture}" class="user-profile-picture img-thumbnail" />
+						<img src="{picture}" class="user-profile-picture" />
 					</div>
 
 					<div>
@@ -57,20 +25,22 @@
 							<!-- ENDIF !config.disableChat -->
  							<a id="follow-btn" href="#" class="btn btn-success btn-sm <!-- IF isFollowing -->hide<!-- ENDIF isFollowing -->">[[user:follow]]</a>
  							<a id="unfollow-btn" href="#" class="btn btn-warning btn-sm <!-- IF !isFollowing -->hide<!-- ENDIF !isFollowing -->">[[user:unfollow]]</a>
-							
-							<!-- IF isAdmin -->
+
+                            				<!-- IF isAdmin -->
 							<br/><br/>
+
 							<a id="banAccountBtn" href="#" class="btn btn-danger btn-sm <!-- IF banned -->hide<!-- ENDIF banned -->">[[user:ban_account]]</a>
 							<a id="unbanAccountBtn" href="#" class="btn btn-danger btn-sm <!-- IF !banned -->hide<!-- ENDIF !banned -->">[[user:unban_account]]</a>
 							<a id="deleteAccountBtn" href="#" class="btn btn-danger btn-sm">[[user:delete_account]]</a><br/><br/>
 							<!-- ENDIF isAdmin -->
 							<!-- ENDIF !isSelf -->
-							
+
 						</div>
 
 						<div id="banLabel" class="text-center <!-- IF !banned -->hide<!-- ENDIF !banned -->">
 							<span class="label label-danger">[[user:banned]]</span>
 						</div>
+
 						<!-- IF aboutme -->
 						<hr/>
 						<div component="aboutme" class="text-center">
@@ -80,10 +50,12 @@
 						<hr/>
 						<div class="text-center account-stats">
 
+							<!-- IF reputation -->
 							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{reputation}">{reputation}</span>
 								<span class="account-bio-label">[[global:reputation]]</span>
 							</div>
+							<!-- ENDIF reputation -->
 
 							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{postcount}">{postcount}</span>
@@ -95,6 +67,7 @@
 								<span class="account-bio-label">[[user:profile_views]]</span>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -181,52 +154,16 @@
 
 		</div>
 
-
 		<div class="col-md-7">
-			<!-- IF !posts.length -->
-			<div class="alert alert-info">[[user:has_no_posts]]</div>
-			<!-- ENDIF !posts.length -->
-<ul component="posts" class="posts-list" data-nextstart="{nextStart}">
-
-	<!-- BEGIN posts -->
-	<li component="post" class="posts-list-item" data-pid="{posts.pid}" data-uid="{posts.uid}">
-
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<a href="{config.relative_path}/user/{posts.user.userslug}">
-					<img title="{posts.user.username}" class="img-rounded user-img" src="{posts.user.picture}">
-				</a>
-
-				<a href="{config.relative_path}/user/{posts.user.userslug}">
-					<strong><span>{posts.user.username}</span></strong>
-				</a>
-				<div component="post/content" class="content">
-					<p>{posts.content}</p>
-					<p class="fade-out"></p>
-				</div>
-				<small>
-					<span class="pull-right">
-						[[global:posted_in_ago, <a href="{config.relative_path}/category/{posts.category.slug}"><i class="fa {posts.category.icon}"></i> {posts.category.name}</a>, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
-						<a href="{config.relative_path}/topic/{posts.topic.slug}/{posts.index}">[[global:read_more]]</a>
-					</span>
-				</small>
-			</div>
+		<!-- IF !posts.length -->
+		<div class="alert alert-warning">[[user:has_no_posts]]</div>
+		<!-- ENDIF !posts.length -->
+		<!-- IMPORT partials/posts_list.tpl -->
 		</div>
 
-	</li>
-	<!-- END posts -->
-</ul>
-<div component="posts/loading" class="loading-indicator text-center hidden">
-	<i class="fa fa-refresh fa-spin"></i>
-</div>
-		</div>
 	</div>
 
 	<br/>
 	<div id="user-action-alert" class="alert alert-success hide"></div>
 
 </div>
-
-<input type="hidden" template-variable="yourid" value="{yourid}" />
-<input type="hidden" template-variable="theirid" value="{theirid}" />
-<input type="hidden" template-type="boolean" template-variable="isFollowing" value="{isFollowing}" />

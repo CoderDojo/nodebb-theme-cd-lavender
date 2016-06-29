@@ -1,14 +1,167 @@
 .topic {
-	> ul {
-		margin-bottom: 0;
+	h1 {
+		line-height: 24px;
+		margin-bottom: 30px;
+		
+		.topic-title {
+			font-size: 28px;
+			color:inherit;
+			line-height: 32px;
+		}
 
-		> li {
-			padding-bottom: 0;
-			margin-bottom: 15px;
+		> span {
+			text-transform: uppercase;
+			color: @gray-light;
+			font-size: 12px;
+			display: inline-block;
+			margin-top: 8px;
 
-			&:last-child {
-				margin-bottom: 0;
+			> span {
+				vertical-align: middle;
+				margin-right: 8px;
 			}
+		}
+
+		.topic-title {
+			text-transform: initial;
+		}
+
+		.browsing-users {
+			margin-top: 3px;
+		}
+	}
+
+	.posts {
+		.icon {
+			font-size: 17px;
+			line-height: 17px;
+			border-radius: 50%;
+			min-width: 46px;
+			min-height: 46px;
+			margin-top: 2px;
+
+			img {
+				margin-right: 15px;
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+			}
+		}
+
+		.group-label {
+			text-transform: uppercase;
+			vertical-align: 6%;
+			padding: 4px;
+			border-radius: 2px;
+		}
+	}
+
+	.votes {
+		position: absolute;
+		top: 1px;
+		right: 25px;
+	}
+
+	[component="post/upvote"], [component="post/downvote"] {
+		color: @gray-light;
+	}
+
+	[component="post/upvote"].upvoted, [component="post/downvote"].downvoted {
+		color: @brand-primary;
+	}
+
+	.stats {
+		width: 60px;
+		float: left;
+		margin-top: -5px;
+	}
+
+	.topic-main-buttons a.btn {
+		margin-left: 20px;
+	}
+
+	.title {
+		p {
+			margin-bottom: 4px;
+		}
+
+		small {
+			margin-top: 2px;
+			display: block;
+
+			color: @gray-light;
+
+			strong {
+				color: @gray-dark;
+			}
+		}
+	}
+
+	.content {
+		margin-top: 20px;
+		padding-bottom: 1px;
+		margin-top: -43px;
+		margin-left: 61px;
+		word-wrap: break-word;
+		overflow: hidden;
+	}
+
+	.post-tools {
+		text-transform: lowercase;
+		:before {
+			content: "\2022\0020";
+		}
+		a {
+			.pointer;
+		}
+	}
+
+	.moderator-tools {
+		position: absolute;
+		right: -5px;
+		top: 0;
+		font-size: 14px;
+
+		> a {
+			padding: 0.25em;
+		}
+
+		a {
+			color: @gray-light;
+			outline: none;
+
+			&[role="menuitem"] {
+				color: @gray-light;
+			}
+		}
+
+		// temporary until we build component toggling
+		.favourite.btn-warning, .follow.btn-success {
+			background: white !important;
+			color: #333;
+			&:hover {
+				background: @brand-primary !important;
+			}
+		}
+	}
+
+	.tags {
+		vertical-align: -40%;
+	}
+
+	h1 {
+		.btn-group, .btn {
+			margin-left: 15px;
+		}
+
+		.btn {
+			background: @body-bg;
+			text-transform: uppercase;
+			font-weight: 600;
+			box-shadow: none !important;
+			font-size: 11px;
+			color: @gray-light;
+			padding: 0;
 		}
 	}
 
@@ -19,187 +172,177 @@
 		padding-top: 5px;
 		display: inline-block;
 		font-style: italic;
+		margin-left: 61px;
 	}
 
-	.topic-item {
-		position: relative;
-
-		.post-tools {
-			opacity: 0;
-			-webkit-transition: opacity 0.25s ease-in;
-		 	-moz-transition: opacity 0.25s ease-in;
-		 	-o-transition: opacity 0.25s ease-in;
-		 	-ms-transition: opacity 0.25s ease-in;
-		 	transition: opacity 0.25s ease-in;
-			button {
-				color: @gray-dark;
-			}
+	@media (max-width: @screen-sm-max) {
+		.content {
+			margin-left: 0;
+			margin-top: -10px;
 		}
 
-		&:hover {
-			.post-tools {
-				opacity: 1;
-			}
+		.post-signature {
+			margin-left: 0px;
 		}
 
-		.post-content {
-			ul, ol  {
-				margin-bottom: 10px;
-			}
-
-			ul {
-				> li {
-					list-style-type: disc;
-
-					ul > li {
-						list-style-type: circle;
-
-						ul > li {
-							list-style-type: square;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	.post-bar {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		padding: 10px;
-		border-left: 2px solid @brand-primary;
-	}
-
-	.post-bar, .post-row {
-		background-color:#fff;
-		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
-		box-shadow: inset 0px 0px 2px 2px #ffffff;
-		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-	}
-
-	.topic-body {
-		padding: 10px;
-		padding-bottom: 5px;
-	}
-
-
-	.topic-profile-pic {
-		width: 70px;
-		float: left;
-		margin-left: 15px;
-		margin-right: 15px;
-
-		.username {
-			text-overflow: ellipsis;
-			display: block;
-			overflow: hidden;
-			font-size: 80%;
-		}
-
-		.group-label {
+		.posts .icon {
+			min-width: 0;
+			min-height: 0;
 			margin-top: 5px;
-			word-wrap: normal;
-			white-space: normal;
-		}
-	}
 
-	.topic-text {
-		font-size: 18px;
-		color: #666;
-		overflow: hidden;
-		word-wrap: break-word;
-	}
-
-	.posts {
-		> li {
-			padding-bottom: 0px;
-			border-left: 2px solid @brand-primary;
-			.topic-title {
-				margin-top: 0px;
-				margin-bottom: 5px;
-				font-weight: 500;
-				color: @brand-primary;
-				display: none;
+			img {
+				width: 23px;
+				height: 23px;
 			}
-		}
-
-		> li[data-index="0"] {
-			.post-content {
-				min-height: 60px;
-			}
-			border-left: none;
-
-			.topic-title {
-				display: block;
-			}
-		}
-	}
-
-	[component="post/upvote"], [component="post/downvote"] {
-		color: @gray-light;
-		width: 20px;
-		height: 20px;
-		line-height: 18px;
-		text-align: center;
-		display: inline-block;
-	}
-
-	[component="post/upvote"].upvoted, [component="post/downvote"].downvoted {
-		color: @brand-primary;
-		line-height: 18px;
-	}
-
-	.menu-icon {
-		margin-right: 5px;
-	}
-
-	.dropdown {
-		display: inline-block;
-	}
-
-	.topic-footer {
-		border-top: 1px solid #ddd;
-
-		.pull-right {
-			text-align: right;
-			padding: 5px 10px;
-		}
-
-		.row {
-			padding: 10px 10px 10px 20px;
-		}
-	}
-
-
-	.favourite, .follow {
-		cursor: pointer;
-	}
-
-	.favourite.btn-warning, .follow.btn-success {
-		background: white !important;
-		color: #333;
-		&:hover {
-			background: @brand-primary !important;
 		}
 	}
 }
 
-.thread_active_users a[data-uid] {
-	img {
+
+.topic {
+	&.deleted {
+		.opacity(0.3);
+
+		.votes {
+			display: none;
+		}
+	}
+
+	.posts {
+		list-style-type: none;
+		padding: 0;
+
+		> li {
+			position: relative;
+
+			.edit-icon, .status {
+				vertical-align: -2%;
+			}
+
+			&.deleted {
+				.content {
+					.opacity(0.3);
+				}
+
+				.votes {
+					display: none;
+				}
+			}
+
+			> hr {
+				.transition(0.75s ease-in-out border-color);
+			}
+
+			&.highlight > hr {
+				border-color: darken(@brand-info, 20%);
+				box-shadow: 0px 0px 1px @brand-info;
+			}
+		}
+
+		.content {
+			.fix-lists;
+
+			blockquote {
+				font-size: 85%;
+			}
+
+			> blockquote {
+				> *:not(:first-child) {
+					display: none;
+				}
+
+				> blockquote {
+					display: block!important;
+					> *:not(:first-child) {
+						display: none;
+					}
+				}
+			}
+
+			> blockquote.uncollapsed {
+				> *:not(:first-child) {
+					display: block;
+				}
+
+				> blockquote {
+					display: block!important;
+					> *:not(:first-child) {
+						display: block;
+					}
+				}
+			}
+
+			iframe, .img-responsive {
+				max-width: 85%;
+			}
+
+			.toggle {
+				padding: 0px 5px;
+				border: 1px solid #e0e0e0;
+				background: #fcfcfc;
+				width: 50px;
+				text-align: center;
+				display:block!important;
+			}
+
+			pre {
+				max-height: 350px;
+
+				code {
+					white-space: pre;
+					word-wrap: normal;
+				}
+			}
+
+			@media (max-width: @screen-sm-min) {
+				pre {
+					max-height: 250px;
+				}
+			}
+		}
+	}
+}
+
+.thread_active_users {
+	text-transform: initial;
+
+	a[data-uid] {
 		position: relative;
-		z-index: 1;
-		border-radius: 50%;
+		margin-left: 14px;
+
+		img {
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+		}
+
+		&::after {
+			position: absolute;
+			z-index: 0;
+			opacity: 0;
+
+			font-family: "FontAwesome";
+			content: "\f11c";
+			padding: 4px 0.25em;
+			top: 0px;
+			left: 0px;
+
+			.transition(~"opacity ease 250ms, top ease 250ms")
+		}
+
+		&.replying::after {
+			opacity: 1;
+			top: -24px;
+			.animation(topic-reply-pulse 2s ease-in infinite);
+		}
 	}
 
-	&::after {
-		z-index: 0;
-		margin-left: -24px;
-		.transition(~"opacity 250ms ease, margin-left 250ms ease");
-	}
-
-	&.replying::after {
-		margin-left: 0px;
-		.animation(topic-reply-pulse 2s ease-in infinite);
+	.anonymous-box {
+		border: 1px solid #ddd;
+		width: 24px;
+		height: 24px;
+		position: relative;
+		text-align: center;
 	}
 }
